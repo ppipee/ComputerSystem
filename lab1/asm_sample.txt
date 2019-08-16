@@ -1,0 +1,46 @@
+Translate the following snippet of high-level language code to MIPS assembly:
+
+if ((A[i] <= y) && (A[i] >= x)) {
+  count++;
+  A[i]++;
+}
+else if (A[i] < (x+2) ) {
+  count--;
+  A[i]--;
+}
+else {
+  count += 2;
+  A[i] += 2;
+}
+i++;
+
+A is an array of integer and i, x, y, and count are integer variables.
+Let $8 <- i, $9 <- x, $10 <- y, $11 <- count, $12 <- starting address of A[0].
+Let $16 store a temp (temporary) value for further calculation.
+
+if_block:
+sll $13, $8, 2 # i* 4
+add $14, $12, $13 # calc address of A[i]
+lw $15, 0($14) # load A[i] to $15
+slt $16, $10, $15 # check if y < A[i]
+bne $16, $0, else_if_block # if y < A[i] go to else_if_block
+slt $16, $15, $9 # check if A[i] < x
+bne $16, $0, else_if_block # if A[i] < x go to else_if_block
+addi $11, $11, 1 # count++
+addi $16, $15, 1 # temp = A[i] + 1
+sw $16, 0($14) # store temp to A[i] location
+j join_location
+else_if_block:
+addi $16, $9, 2 # temp = x + 2
+slt $16, $15, $16 # check if A[i] < temp
+beq $16, $0, else_block # go to else_block if A[i] >= temp
+addi $11, $11, -1 # count--
+addi $16, $15, -1 # temp = A[i] - 1
+sw $16, 0($14) # store temp to A[i] location
+j join_location
+else_block:
+addi $11, $11, 2 # count += 2
+addi $16, $15, 2 # temp = A[i] + 2
+sw $16, 0($14) # store temp to A[i] location
+join_location:
+addi $8, $8, 1
