@@ -1,6 +1,7 @@
 .data # data section
 new_line: .asciiz "\n"
 space: .asciiz " "
+data: .word 132470, 324545, 73245, 93245, 80324542, 244, 2, 66, 236, 327, 236, 21544
 .text # text section
 
 .globl main # call main by SPIM
@@ -145,6 +146,7 @@ insertionSortRecursive:
 
 main:
     li $t1, 12 # define N = 12
+    # la $t0, data # load address array
 
     # declare data of array
     addiu $sp, $sp, -48
@@ -182,7 +184,6 @@ main:
     jal insertionSortRecursive
     jal printArray
     addiu $sp, $sp, 8
-    li $v0, 0 # return 0
 
 # call exit once everything is done
 li $v0, 10
