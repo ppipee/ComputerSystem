@@ -1,0 +1,17 @@
+100000 add 33 280 #addi
+100001 addu 34 281 #addiu
+# 100010 sub 35 282 #sub
+# 100011 subu 36 286 #subu
+100100 and 37 281 #andi
+100101 or 38 285 #ori
+100110 xor 39 283 #xori
+
+100111 eq
+100011 ne
+# 100111 slti 43 287 #slti 
+# 101001 sltiu 44 289 #sltiu
+1011 eq
+1001 ne
+
+beq
+bne
