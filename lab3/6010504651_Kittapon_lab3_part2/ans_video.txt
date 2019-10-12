@@ -1,0 +1,7 @@
+#R_hailstone
+- ในตอนเริ่มต้นมี input = 5 ที่ register 8 ($t0)
+- ในตอนท้ายมี output = 5 ที่ register 8 ($t0)
+
+#I_hailstone
+- ในตอนเริ่มต้นมี input = 5 ที่ register 8 ($t0)
+- ในตอนท้ายมี output = 5 ที่ register 8 ($t0)
