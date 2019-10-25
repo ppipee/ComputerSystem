@@ -14,11 +14,14 @@ main:
 	addiu $s1, $s1, 1						# 63
 	sw $s1, 0($sp)							# 64
 	lw $s2, 8($sp)							# 65
-	addu $s3, $s2, $zero					# 66
-	lw $s2, 4($sp)							# 67
-	addu $s3, $s2, $s3						# 68
-	lw $s2, 0($sp)							# 69
+	nop
+	addu $s3, $s2, $zero					# 67
+	lw $s2, 4($sp)							# 68
+	nop
 	addu $s3, $s2, $s3						# 70
+	lw $s2, 0($sp)							# 71
+	nop
+	addu $s3, $s2, $s3						# 73
 	nop										
 	nop										
 	nop										

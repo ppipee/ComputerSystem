@@ -82,7 +82,7 @@ sll $t7, $t6, 2 # a[i]*=4
 addu $t7, $t7, $t2
 lw $t8, 0($t7) # c[a[i]]
 # load b[c[a[i]]] from address
-sll $t9, $t8, 2 # b[c[a[i]]]*=4
+sll $t9, $t8, 2 # c[a[i]]*=4
 addu $t9, $t9, $t1 
 sw $t6, 0($t9) # b[c[a[i]]] = a[i]
 

@@ -140,15 +140,6 @@ expo3:
         # return $v0
         jr $ra
 
-
-    # load ra and fp from adress and adjust stack pointer
-    lw $ra, 4($sp)
-    lw $fp, 0($sp)
-    addiu $sp, $sp, 8
-    
-    jr $ra
-
-
 main:
     addiu $sp, $sp, -4 # allocate for "result" variable
     
@@ -176,7 +167,7 @@ main:
     addu $t2, $zero, $v0 # result = value from function expo1
     # print "text expo1"
 	li $v0, 4
-	la $a0, text_expo3
+	la $a0, text_expo2
 	syscall
     # print result of expo1
 	li $v0, 1
