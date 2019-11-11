@@ -1,0 +1,15 @@
+
+Cache Parameters:
+Cache Size: 512
+Block Size: 8
+Associativity: 1
+
+Total memory accesses: 24000000
+Number of hits: 11922114
+Number of read misses: 11429784
+Number of write misses: 648102
+Number of write backs: 648101
+Overall miss ratio: 50.32453
+Read miss ratio: 71.43615
+Write miss ratio: 8.10127
+
