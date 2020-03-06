@@ -4,7 +4,7 @@
 
 - lab0 - lab2
 
-## Architecure MIP32
+## Architecture MIP32
 
 ### Single Cycle
 
