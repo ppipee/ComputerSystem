@@ -18,5 +18,6 @@
 
 - lab5-6
 
-* complie with SPIM
-* design circuit with logisim (cs3410 2017)
+###### complie with SPIM
+
+###### design circuit with logisim (cs3410 2017)
